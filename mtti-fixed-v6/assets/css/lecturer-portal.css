@@ -1,0 +1,28 @@
+/**
+ * MTTI Lecturer Portal Styles
+ * Extends learner-portal.css with lecturer-specific components
+ */
+
+/* Scheme timeline */
+.mtti-scheme-timeline { display: flex !important; flex-direction: column !important; }
+.mtti-scheme-week .mtti-card { transition: box-shadow var(--ease) !important; }
+.mtti-scheme-week .mtti-card:hover { box-shadow: var(--shadow-md) !important; }
+
+/* Session timer display */
+#session-timer { font-family: 'Courier New', monospace !important; }
+
+/* Attendance buttons */
+.att-btn.active-present { background: #2E7D32 !important; color: white !important; border-color: #2E7D32 !important; }
+.att-btn.active-absent  { background: #C62828 !important; color: white !important; border-color: #C62828 !important; }
+.att-btn.active-late    { background: #FF8F00 !important; color: white !important; border-color: #FF8F00 !important; }
+.att-btn.active-excused { background: #1565C0 !important; color: white !important; border-color: #1565C0 !important; }
+
+/* Week status badges */
+.week-status-completed   { color: #2E7D32 !important; background: #E8F5E9 !important; }
+.week-status-inprogress  { color: #FF8F00 !important; background: #FFF3E0 !important; }
+.week-status-pending     { color: #999 !important; background: #F5F5F5 !important; }
+.week-status-skipped     { color: #C62828 !important; background: #FFEBEE !important; }
+
+@media screen and (max-width: 768px) {
+    #session-timer { font-size: 28px !important; }
+}

@@ -1,0 +1,6 @@
+/* Public-facing styles */
+.mtti-courses, .mtti-portal {
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+}

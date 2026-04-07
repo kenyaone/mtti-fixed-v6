@@ -1,0 +1,155 @@
+# 📦 MTTI MIS v3.8.0 - INSTALLATION INSTRUCTIONS
+
+## 🎯 What You Have
+
+This is the **COMPLETE WordPress Plugin Package** ready for installation.
+
+---
+
+## 📂 Folder Contents
+
+```
+mtti-mis-v3.8.0-COMPLETE/
+│
+├── 📁 admin/                    ← Admin classes (certificates, students, etc.)
+├── 📁 includes/                 ← Core plugin classes
+├── 📁 assets/                   ← CSS, JavaScript, images
+├── 📁 public/                   ← Public-facing classes
+│
+├── 📄 mtti-mis.php              ← Main plugin file
+├── 📄 verify-certificate-custom.php  ← Verification page
+│
+├── 📘 GETTING-STARTED.md        ← START HERE!
+├── 📘 README.md                 ← Quick reference
+├── 📘 INSTALLATION-GUIDE-v3.8.0.md
+├── 📘 CHANGELOG-v3.8.0.md
+├── 📘 PACKAGE-SUMMARY.md
+│
+├── 🔧 database-setup.sql        ← Manual database setup
+└── 🔧 install.sh                ← Automated installation script
+```
+
+---
+
+## 🚀 QUICK INSTALLATION (5 Minutes)
+
+### Step 1: Upload Plugin Folder
+Upload the **ENTIRE folder** (admin, includes, assets, public, mtti-mis.php) to:
+```
+/wp-content/plugins/mtti-mis/
+```
+
+**Result should be:**
+```
+/wp-content/plugins/mtti-mis/admin/
+/wp-content/plugins/mtti-mis/includes/
+/wp-content/plugins/mtti-mis/assets/
+/wp-content/plugins/mtti-mis/public/
+/wp-content/plugins/mtti-mis/mtti-mis.php
+```
+
+### Step 2: Upload Verification Page
+Upload **verify-certificate-custom.php** to your website root:
+```
+/public_html/verify-certificate-custom.php
+```
+
+**Same level as wp-config.php!**
+
+### Step 3: Activate Plugin
+1. Go to WordPress Admin > Plugins
+2. Find "MTTI Management Information System"
+3. Click "Activate"
+4. ✅ Done! Database table created automatically
+
+### Step 4: Test
+1. Generate a test certificate
+2. Visit: https://yourdomain.com/verify-certificate-custom.php
+3. Verify the certificate
+
+---
+
+## 📖 Detailed Instructions
+
+**Read GETTING-STARTED.md for:**
+- Complete step-by-step guide
+- Troubleshooting
+- Different installation scenarios
+- Testing procedures
+
+---
+
+## 🔄 If Upgrading from v3.7.x
+
+### Quick Upgrade (Replace 3 Files Only)
+
+**Backup first!** Then replace these 3 files:
+
+1. `/wp-content/plugins/mtti-mis/mtti-mis.php`
+2. `/wp-content/plugins/mtti-mis/includes/class-mtti-mis-activator.php`
+3. `/wp-content/plugins/mtti-mis/admin/class-mtti-mis-admin-certificates.php`
+
+**Plus add this new file:**
+4. `/public_html/verify-certificate-custom.php`
+
+Then deactivate and reactivate the plugin.
+
+---
+
+## ⚠️ IMPORTANT NOTES
+
+### File Locations
+- **Plugin files** → `/wp-content/plugins/mtti-mis/`
+- **Verification page** → Website root (NOT in wp-content!)
+
+### Old Certificates
+- Certificates generated before v3.8.0 are NOT in database
+- They need to be regenerated to be verifiable
+- Or manually added using database-setup.sql
+
+### Database
+- Table `wp_mtti_certificates` will be created automatically
+- If automatic creation fails, run `database-setup.sql` manually
+
+---
+
+## ✅ Quick Checklist
+
+Before Installation:
+- [ ] Read GETTING-STARTED.md
+- [ ] Backup database
+- [ ] Backup files
+
+During Installation:
+- [ ] All plugin files uploaded to /wp-content/plugins/mtti-mis/
+- [ ] verify-certificate-custom.php uploaded to website root
+- [ ] Plugin activated
+
+After Installation:
+- [ ] Database table exists (check in phpMyAdmin)
+- [ ] Test certificate generated
+- [ ] Certificate shows verification code
+- [ ] Verification page works
+
+---
+
+## 🆘 Need Help?
+
+1. **Read GETTING-STARTED.md** - Most comprehensive guide
+2. **Read INSTALLATION-GUIDE-v3.8.0.md** - Detailed troubleshooting
+3. **Check PACKAGE-SUMMARY.md** - Feature overview
+4. **Run database-setup.sql** - If table creation fails
+
+---
+
+## 📞 Support
+
+Website: https://mtti.ac.ke
+Email: info@mtti.ac.ke
+
+---
+
+**Version:** 3.8.0
+**Release Date:** December 12, 2024
+
+**Happy Installing! 🚀**

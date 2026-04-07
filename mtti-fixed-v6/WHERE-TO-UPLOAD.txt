@@ -1,0 +1,317 @@
+# 📍 FILE INSTALLATION MAP - Where Everything Goes
+
+## 🗺️ Visual Guide
+
+```
+Your Website Structure
+│
+├── 📁 public_html/  (or www/ or httpdocs/)
+│   │
+│   ├── 📄 wp-config.php         ← WordPress root directory
+│   ├── 📄 wp-login.php
+│   ├── 📄 index.php
+│   │
+│   ├── 📄 verify-certificate-custom.php  ⭐ UPLOAD HERE! (from package)
+│   │
+│   ├── 📁 wp-content/
+│   │   │
+│   │   ├── 📁 plugins/
+│   │   │   │
+│   │   │   ├── 📁 mtti-mis/     ⭐ CREATE THIS FOLDER
+│   │   │   │   │
+│   │   │   │   ├── 📁 admin/    ⭐ UPLOAD (from package)
+│   │   │   │   │   ├── class-mtti-mis-admin-certificates.php
+│   │   │   │   │   ├── class-mtti-mis-admin-students.php
+│   │   │   │   │   └── ... (all admin files)
+│   │   │   │   │
+│   │   │   │   ├── 📁 includes/ ⭐ UPLOAD (from package)
+│   │   │   │   │   ├── class-mtti-mis-activator.php
+│   │   │   │   │   ├── class-mtti-mis-database.php
+│   │   │   │   │   └── ... (all include files)
+│   │   │   │   │
+│   │   │   │   ├── 📁 assets/   ⭐ UPLOAD (from package)
+│   │   │   │   │   ├── css/
+│   │   │   │   │   ├── js/
+│   │   │   │   │   └── images/
+│   │   │   │   │
+│   │   │   │   ├── 📁 public/   ⭐ UPLOAD (from package)
+│   │   │   │   │   └── class-mtti-mis-public.php
+│   │   │   │   │
+│   │   │   │   └── 📄 mtti-mis.php  ⭐ UPLOAD (main plugin file)
+│   │   │   │
+│   │   │   ├── 📁 other-plugin-1/
+│   │   │   └── 📁 other-plugin-2/
+│   │   │
+│   │   └── 📁 themes/
+│   │
+│   └── 📁 wp-admin/
+```
+
+---
+
+## 📦 What to Upload from the Package
+
+### From Your Downloaded Package:
+
+```
+mtti-mis-v3.8.0-COMPLETE/
+│
+├── admin/          → Upload to: /wp-content/plugins/mtti-mis/admin/
+├── includes/       → Upload to: /wp-content/plugins/mtti-mis/includes/
+├── assets/         → Upload to: /wp-content/plugins/mtti-mis/assets/
+├── public/         → Upload to: /wp-content/plugins/mtti-mis/public/
+├── mtti-mis.php    → Upload to: /wp-content/plugins/mtti-mis/mtti-mis.php
+│
+└── verify-certificate-custom.php → Upload to: /public_html/ (ROOT!)
+```
+
+---
+
+## 🎯 Two Files to Upload, Two Locations
+
+### Location 1: Plugin Folder
+**Upload To:** `/wp-content/plugins/mtti-mis/`
+
+**What to Upload:**
+- ✅ admin/ folder
+- ✅ includes/ folder
+- ✅ assets/ folder
+- ✅ public/ folder
+- ✅ mtti-mis.php file
+
+### Location 2: Website Root
+**Upload To:** `/public_html/` (same level as wp-config.php)
+
+**What to Upload:**
+- ✅ verify-certificate-custom.php
+
+---
+
+## 🔍 How to Find Your Website Root
+
+### Via FTP:
+```
+Connect to FTP
+→ Look for folder with wp-config.php
+→ That's your root!
+→ Upload verify-certificate-custom.php THERE
+```
+
+### Via cPanel File Manager:
+```
+Login to cPanel
+→ File Manager
+→ Look for public_html/ or www/ or httpdocs/
+→ Inside, you'll see wp-config.php
+→ Upload verify-certificate-custom.php THERE
+```
+
+### Via Hosting Control Panel:
+```
+Different hosts have different names:
+- public_html/ (most common)
+- www/
+- httpdocs/
+- html/
+- web/
+
+Look for the folder containing:
+- wp-config.php
+- wp-content/
+- wp-admin/
+```
+
+---
+
+## ✅ Verification - Did I Do It Right?
+
+### After Upload, Your Structure Should Look Like:
+
+```
+/public_html/
+├── wp-config.php
+├── verify-certificate-custom.php  ✓ Should be here!
+└── wp-content/
+    └── plugins/
+        └── mtti-mis/
+            ├── admin/              ✓ Should be here!
+            ├── includes/           ✓ Should be here!
+            ├── assets/             ✓ Should be here!
+            ├── public/             ✓ Should be here!
+            └── mtti-mis.php        ✓ Should be here!
+```
+
+---
+
+## ❌ Common Mistakes to Avoid
+
+### Mistake 1: Wrong Plugin Location
+**WRONG:**
+```
+/wp-content/plugins/mtti-mis-v3.8.0-COMPLETE/mtti-mis.php
+```
+
+**CORRECT:**
+```
+/wp-content/plugins/mtti-mis/mtti-mis.php
+```
+
+### Mistake 2: Verification Page in Wrong Location
+**WRONG:**
+```
+/wp-content/verify-certificate-custom.php
+/wp-content/plugins/verify-certificate-custom.php
+```
+
+**CORRECT:**
+```
+/public_html/verify-certificate-custom.php
+(same level as wp-config.php)
+```
+
+### Mistake 3: Uploading Package Folder Name
+**WRONG:**
+```
+/wp-content/plugins/mtti-mis-v3.8.0-COMPLETE/
+```
+
+**CORRECT:**
+```
+/wp-content/plugins/mtti-mis/
+(remove version number from folder name)
+```
+
+---
+
+## 🚀 Quick Upload Guide
+
+### Using FTP (FileZilla, etc.)
+
+**Step 1: Connect to your site**
+
+**Step 2: Navigate to plugin folder**
+```
+Remote site: /public_html/wp-content/plugins/
+```
+
+**Step 3: Create folder**
+```
+Right-click → Create directory → Name it: mtti-mis
+```
+
+**Step 4: Upload plugin files**
+```
+Enter mtti-mis folder
+Drag and drop from local package:
+- admin/ folder
+- includes/ folder
+- assets/ folder
+- public/ folder
+- mtti-mis.php file
+```
+
+**Step 5: Upload verification page**
+```
+Navigate to: /public_html/
+Drag and drop: verify-certificate-custom.php
+```
+
+### Using cPanel File Manager
+
+**Step 1: Open File Manager**
+```
+cPanel → File Manager → public_html
+```
+
+**Step 2: Go to plugins folder**
+```
+wp-content/ → plugins/
+```
+
+**Step 3: Create folder**
+```
+Click "New Folder" → Name: mtti-mis → Create
+```
+
+**Step 4: Upload plugin files**
+```
+Enter mtti-mis folder
+Click "Upload"
+Select and upload:
+- All 4 folders (admin, includes, assets, public)
+- mtti-mis.php file
+```
+
+**Step 5: Upload verification page**
+```
+Go back to public_html/
+Click "Upload"
+Select: verify-certificate-custom.php
+Upload
+```
+
+---
+
+## 🎯 Final Check
+
+After uploading, check these URLs in your browser:
+
+### Check 1: Plugin Main File
+Visit (replace yourdomain.com):
+```
+yourdomain.com/wp-content/plugins/mtti-mis/mtti-mis.php
+```
+Should show: Blank page or PHP code (not 404)
+
+### Check 2: Verification Page
+Visit:
+```
+yourdomain.com/verify-certificate-custom.php
+```
+Should show: Certificate verification form (not 404)
+
+### Check 3: Admin Page
+Visit:
+```
+yourdomain.com/wp-admin/plugins.php
+```
+Should show: MTTI MIS plugin in list
+
+---
+
+## ✅ Installation Checklist
+
+- [ ] Package downloaded and extracted
+- [ ] Created /wp-content/plugins/mtti-mis/ folder
+- [ ] Uploaded admin/ folder to plugin
+- [ ] Uploaded includes/ folder to plugin
+- [ ] Uploaded assets/ folder to plugin
+- [ ] Uploaded public/ folder to plugin
+- [ ] Uploaded mtti-mis.php to plugin folder
+- [ ] Uploaded verify-certificate-custom.php to root
+- [ ] All files have correct permissions (644 for files, 755 for folders)
+- [ ] Ready to activate plugin!
+
+---
+
+## 🆘 Still Confused?
+
+**Watch for these landmarks:**
+
+Your ROOT directory contains:
+- wp-config.php ← This file is the key marker
+- wp-content/ folder
+- wp-admin/ folder
+- wp-login.php
+
+Your PLUGIN directory:
+- Inside wp-content/
+- Inside plugins/
+- Create mtti-mis/ folder here
+
+**Verification page goes:** Same level as wp-config.php
+**Plugin files go:** Inside wp-content/plugins/mtti-mis/
+
+---
+
+**Need more help?** Read GETTING-STARTED.md for detailed instructions!
